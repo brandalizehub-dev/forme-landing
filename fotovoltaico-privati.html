@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORME | Fotovoltaico a Bologna — Chi conosce i tetti</title>
+    <meta name="description" content="Fotovoltaico a Bologna e provincia. Da FORME veniamo dalla bioedilizia: installiamo pannelli sapendo già cosa stiamo toccando. Sopralluogo gratuito, un referente unico.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iubenda Cookie Solution -->
+    <script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {
+        "siteId": 3834643,
+        "cookiePolicyId": 43497530,
+        "lang": "it",
+        "perPurposeConsent": true,
+        "preferenceCookie": { "expireAfter": 180 },
+        "banner": {
+            "acceptButtonDisplay": true,
+            "closeButtonDisplay": false,
+            "customizeButtonDisplay": true,
+            "explicitWithdrawal": true,
+            "listPurposes": true,
+            "position": "float-top-center",
+            "rejectButtonDisplay": true,
+            "showPurposesToggles": true
+        },
+        "callback": {
+            "onPreferenceExpressed": function(preference) {
+                if (preference && preference.purposes && preference.purposes[4] === true) {
+                    initMetaPixel();
+                }
+            }
+        }
+    };
+    </script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    <!-- End Iubenda -->
+
+    <!-- Meta Pixel — si inizializza solo dopo consenso (scopo 4) -->
+    <script>
+    function initMetaPixel() {
+        if (window._pixelLoaded) return;
+        window._pixelLoaded = true;
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1828554751139697');
+        fbq('track', 'PageView');
+    }
+    </script>
+    <!-- End Meta Pixel -->
+
+    <style>
+    /* ============================================================
+       TOKENS
+    ============================================================ */
+    :root {
+        --verde:        #004737;
+        --verde-scuro:  #003028;
+        --verde-light:  #e0f5f0;
+        --arancio:      #f27131;
+        --arancio-dark: #c45820;
+        --bianco:       #ffffff;
+        --grigio-dark:  #1a1a1a;
+        --grigio-mid:   #555555;
+        --grigio-light: #f0f0f0;
+        --radius:       0px;
+        --radius-lg:    0px;
+        --shadow-sm:    0 2px 8px rgba(0,0,0,0.06);
+        --shadow-md:    0 6px 24px rgba(0,0,0,0.09);
+        --shadow-lg:    0 12px 48px rgba(0,0,0,0.12);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; width: 100%; }
+
+    body {
+        font-family: 'Jost', sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--grigio-dark);
+        background: var(--bianco);
+        overflow-x: hidden;
+        width: 100%;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .wrap      { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .wrap-sm   { max-width: 860px;  margin: 0 auto; padding: 0 24px; }
+
+    /* ============================================================
+       TYPOGRAPHY HELPERS
+    ============================================================ */
+    .eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--verde);
+        margin-bottom: 14px;
+    }
+
+    .eyebrow--white { color: rgba(255,255,255,0.7); }
+
+    .section-title {
+        font-size: clamp(28px, 3.8vw, 44px);
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--grigio-dark);
+    }
+
+    .section-intro {
+        font-size: 18px;
+        line-height: 1.75;
+        color: var(--grigio-mid);
+        margin-top: 16px;
+    }
+
+    .section-head {
+        text-align: center;
+        margin-bottom: 64px;
+    }
+
+    .section-head .section-title { max-width: 620px; margin: 0 auto; }
+    .section-head .section-intro { max-width: 580px; margin: 12px auto 0; }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 30px;
+        border-radius: 0;
+        font-family: 'Jost', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.25s ease;
+        white-space: nowrap;
+    }
+
+    .btn--primary {
+        background: var(--arancio);
+        color: var(--bianco);
+        border-color: var(--arancio);
+    }
+    .btn--primary:hover {
+        background: var(--arancio-dark);
+        border-color: var(--arancio-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(242,113,49,0.3);
+    }
+
+    .btn--green {
+        background: var(--verde);
+        color: var(--bianco);
+        border-color: var(--verde);
+    }
+    .btn--green:hover {
+        background: var(--verde-scuro);
+        border-color: var(--verde-scuro);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,124,96,0.25);
+    }
+
+    .btn--ghost-white {
+        background: transparent;
+        color: var(--bianco);
+        border-color: rgba(255,255,255,0.45);
+    }
+    .btn--ghost-white:hover {
+        background: rgba(255,255,255,0.12);
+    }
+
+    .btn--lg { padding: 17px 36px; font-size: 17px; }
+    .btn--full { width: 100%; justify-content: center; }
+
+    /* ============================================================
+       BADGES / TAGS
+    ============================================================ */
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 0;
+    }
+
+    .badge--white-ghost {
+        color: rgba(255,255,255,0.9);
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .badge--green-light {
+        color: var(--verde);
+        background: rgba(0,124,96,0.07);
+    }
+
+    .badge--yellow-light {
+        color: #8a3200;
+        background: rgba(242,113,49,0.12);
+    }
+
+    /* ============================================================
+       DIVIDER
+    ============================================================ */
+    .divider {
+        width: 40px;
+        height: 3px;
+        background: var(--arancio);
+        border-radius: 0;
+        margin: 20px 0;
+    }
+
+    /* ============================================================
+       HEADER
+    ============================================================ */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 200;
+        background: transparent;
+        padding: 20px 0;
+        transition: background 0.3s ease, padding 0.3s ease;
+    }
+
+    .header--scrolled {
+        background: var(--verde);
+        padding: 14px 0;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .header__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo__img {
+        height: 60px;
+        width: auto;
+    }
+
+    .logo__text strong {
+        display: block;
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--bianco);
+        line-height: 1;
+        letter-spacing: -0.5px;
+    }
+
+    .logo__text span {
+        font-size: 10px;
+        color: rgba(255,255,255,0.75);
+        letter-spacing: 0.3px;
+        margin-top: 2px;
+        display: block;
+    }
+
+    .header__cta { display: none; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+        background: linear-gradient(135deg, rgba(0,71,55,0.93) 0%, rgba(0,48,40,0.9) 100%),
+                    url('hero-fotovoltaico.jpg') center/cover no-repeat;
+        color: var(--bianco);
+        padding: 148px 0 80px;
+        position: relative;
+        overflow: visible;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -15%; right: -8%;
+        width: 500px; height: 500px;
+        background: radial-gradient(circle, rgba(241,180,52,0.1) 0%, transparent 65%);
+        border-radius: 50%;
+        animation: float 18s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(0,0) scale(1); }
+        50%       { transform: translate(-20px,-30px) scale(1.04); }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero__content { position: relative; z-index: 1; max-width: 720px; }
+
+    .hero__eyebrow {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.8);
+        margin-bottom: 18px;
+        display: block;
+        animation: fadeUp 0.7s ease forwards;
+    }
+
+    .hero__title {
+        font-size: clamp(34px, 5vw, 56px);
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 22px;
+        animation: fadeUp 0.7s ease 0.15s both;
+    }
+
+    .hero__sub {
+        font-size: 20px;
+        line-height: 1.65;
+        color: rgba(255,255,255,0.88);
+        margin-bottom: 40px;
+        animation: fadeUp 0.7s ease 0.28s both;
+    }
+
+    .hero__ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        animation: fadeUp 0.7s ease 0.4s both;
+    }
+
+    .hero__badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+        animation: fadeUp 0.7s ease 0.52s both;
+    }
+
+    /* ============================================================
+       PROOF STRIP
+    ============================================================ */
+    .proof-strip {
+        background: var(--bianco);
+        border-bottom: 1px solid rgba(0,124,96,0.08);
+    }
+
+    .proof-strip__grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .proof-strip__item {
+        flex: 1;
+        min-width: 150px;
+        padding: 28px 20px;
+        text-align: center;
+        border-right: 1px solid rgba(0,124,96,0.08);
+    }
+
+    .proof-strip__item:last-child { border-right: none; }
+
+    .proof-strip__num {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--verde);
+        line-height: 1;
+    }
+
+    .proof-strip__label {
+        font-size: 13px;
+        color: var(--grigio-mid);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    /* ============================================================
+       HERO INLINE FORM
+    ============================================================ */
+    .hero__inner {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .hero__form-card {
+        background: var(--bianco);
+        padding: 32px 28px;
+        color: var(--grigio-dark);
+    }
+
+    .hero__form-card-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--grigio-dark);
+        margin-bottom: 6px;
+        line-height: 1.3;
+    }
+
+    .hero__form-card-sub {
+        font-size: 14px;
+        color: var(--grigio-mid);
+        margin-bottom: 22px;
+        line-height: 1.5;
+    }
+
+    .hero__form-card .form-field {
+        margin-bottom: 14px;
+    }
+
+    .hero__form-card .form-field label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--grigio-dark);
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .hero__form-card .form-field input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1.5px solid rgba(0,0,0,0.12);
+        font-size: 15px;
+        font-family: 'Jost', sans-serif;
+        color: var(--grigio-dark);
+        background: var(--bianco);
+        outline: none;
+        transition: border-color 0.2s ease;
+    }
+
+    .hero__form-card .form-field input:focus {
+        border-color: var(--verde);
+    }
+
+    .hero__form-card-submit {
+        width: 100%;
+        padding: 15px;
+        background: var(--arancio);
+        color: var(--bianco);
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: 'Jost', sans-serif;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .hero__form-card-submit:hover {
+        background: var(--arancio-dark);
+    }
+
+    .hero__form-card-note {
+        font-size: 12px;
+        color: var(--grigio-mid);
+        text-align: center;
+        margin-top: 10px;
+        line-height: 1.5;
+    }
+    /* Scroll link nel form — solo mobile */
+    .hero__scroll-link {
+        display: none;
+        text-align: center;
+        font-size: 13px;
+        color: var(--grigio-mid);
+        text-decoration: underline;
+        margin-top: 14px;
+        cursor: pointer;
+    }
+    .scroll-arrow {
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 2;
+        opacity: 0.65;
+        transition: opacity 0.2s ease;
+        text-decoration: none;
+    }
+
+    .scroll-arrow:hover { opacity: 1; }
+
+    .scroll-arrow__label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.85);
+    }
+
+    .scroll-arrow svg {
+        animation: bounce-arrow 2.2s ease-in-out infinite;
+    }
+
+    @keyframes bounce-arrow {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(7px); }
+    }
+
+    .bg-white  { background: var(--bianco); }
+    .bg-beige  { background: var(--verde-light); }
+    .section   { padding: 96px 0; }
+
+    /* ============================================================
+       INFILTRAZIONE (validation)
+    ============================================================ */
+    .infiltrazione__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .infiltrazione__img-wrap {
+        position: relative;
+        border-radius: 0;
+        overflow: hidden;
+        aspect-ratio: 4/5;
+    }
+
+    .infiltrazione__img-wrap img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+    }
+
+    .infiltrazione__caption {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 20px 22px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.58));
+        font-size: 13px;
+        color: rgba(255,255,255,0.88);
+        line-height: 1.5;
+    }
+
+    .infiltrazione__text .section-title { margin-bottom: 0; }
+
+    .infiltrazione__body {
+        font-size: 17px;
+        color: var(--grigio-mid);
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .infiltrazione__close {
+        font-size: 17px;
+        color: var(--grigio-dark);
+        font-weight: 500;
+        line-height: 1.75;
+        padding: 20px 24px;
+        background: var(--verde-light);
+        border-left: 3px solid var(--verde);
+        border-radius: 0;
+        margin-top: 32px;
+    }
+
+    /* ============================================================
+       RECENSIONI
+    ============================================================ */
+    .recensioni__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        align-items: start;
+    }
+
+    .rec-card {
+        background: var(--bianco);
+        border-radius: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--shadow-sm);
+        transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .rec-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-3px);
+    }
+
+    .rec-card__img {
+        aspect-ratio: 16/10;
+        overflow: hidden;
+    }
+
+    .rec-card__img img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .rec-card:hover .rec-card__img img { transform: scale(1.04); }
+
+    .rec-card__meta {
+        padding: 20px 24px 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .rec-card__city {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--grigio-dark);
+    }
+
+    .rec-card__profile {
+        font-size: 13px;
+        color: var(--grigio-mid);
+        margin-top: 3px;
+    }
+
+    .rec-card__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .rec-card__body {
+        padding: 20px 24px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        flex: 1;
+    }
+
+    .rec-card__stars { color: var(--arancio); font-size: 15px; }
+
+    .rec-card__quote {
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--grigio-dark);
+        flex: 1;
+    }
+
+    .rec-card__author {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--grigio-dark);
+    }
+
+    .rec-card__author span {
+        font-weight: 400;
+        color: var(--grigio-mid);
+    }
+
+    .rec-note {
+        font-size: 12px;
+        color: var(--grigio-mid);
+        text-align: center;
+        margin-top: 28px;
+    }
+
+    /* ============================================================
+       PROCESSO
+    ============================================================ */
+    .processo__layout {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 80px;
+        align-items: start;
+    }
+
+    .processo__david {
+        position: sticky;
+        top: 90px;
+    }
+
+    .processo__david-img {
+        border-radius: 0;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+    }
+
+    .processo__david-img img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+    }
+
+    .processo__david-card {
+        margin-top: 16px;
+        padding: 18px 20px;
+        background: var(--verde-light);
+        border-radius: 0;
+        border-left: 3px solid var(--verde);
+    }
+
+    .processo__david-name {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--grigio-dark);
+    }
+
+    .processo__david-role {
+        font-size: 14px;
+        color: var(--grigio-mid);
+        margin-top: 3px;
+    }
+
+    .processo__david-services {
+        font-size: 13px;
+        color: var(--verde);
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    .processo__david-note {
+        font-size: 13px;
+        color: var(--grigio-mid);
+        margin-top: 4px;
+    }
+
+    /* Steps */
+    .steps { display: flex; flex-direction: column; }
+
+    .step {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 24px;
+        align-items: start;
+        padding-bottom: 44px;
+        position: relative;
+    }
+
+    .step:last-of-type { padding-bottom: 0; }
+
+    .step::before {
+        content: '';
+        position: absolute;
+        left: 31px;
+        top: 64px;
+        bottom: 0;
+        width: 2px;
+        background: rgba(0,124,96,0.1);
+    }
+
+    .step:last-of-type::before { display: none; }
+
+    .step__num {
+        width: 64px; height: 64px;
+        border-radius: 50%;
+        background: var(--verde);
+        color: var(--bianco);
+        font-size: 22px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .step__num--last {
+        background: var(--arancio);
+        color: var(--verde-scuro);
+    }
+
+    .step__content { padding-top: 10px; }
+
+    .step__timing {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--grigio-mid);
+        margin-bottom: 6px;
+    }
+
+    .step__title {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--grigio-dark);
+        margin-bottom: 10px;
+    }
+
+    .step__body {
+        font-size: 16px;
+        color: var(--grigio-mid);
+        line-height: 1.75;
+    }
+
+    .step__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 12px;
+        padding: 8px 14px;
+        background: rgba(0,124,96,0.06);
+        border-radius: 0;
+        font-size: 13px;
+        color: var(--verde);
+        font-weight: 600;
+    }
+
+    .processo__cta-box {
+        margin-top: 48px;
+        padding: 32px 36px;
+        background: var(--verde-light);
+        border-radius: 0;
+    }
+
+    .processo__cta-box p:first-child {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--grigio-dark);
+        margin-bottom: 4px;
+    }
+
+    .processo__cta-box p:nth-child(2) {
+        font-size: 16px;
+        color: var(--grigio-mid);
+        margin-bottom: 22px;
+    }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-item {
+        background: var(--bianco);
+        border-radius: 0;
+        overflow: hidden;
+        transition: background 0.2s ease;
+    }
+
+    .faq-item--open { background: var(--bianco); }
+
+    .faq-trigger {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 22px 26px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        font-family: 'Jost', sans-serif;
+    }
+
+    .faq-trigger__text {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--grigio-dark);
+        line-height: 1.4;
+    }
+
+    .faq-trigger__icon {
+        font-size: 22px;
+        color: var(--verde);
+        font-weight: 300;
+        flex-shrink: 0;
+        transition: transform 0.25s ease;
+        line-height: 1;
+    }
+
+    .faq-body {
+        display: none;
+        padding: 0 26px 22px;
+        font-size: 16px;
+        color: var(--grigio-mid);
+        line-height: 1.75;
+    }
+
+    /* ============================================================
+       FORM SECTION
+    ============================================================ */
+    .form-card {
+        background: var(--bianco);
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .form-header {
+        background: var(--verde);
+        padding: 36px 44px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 28px;
+        align-items: center;
+    }
+
+    .form-header__photo {
+        width: 88px; height: 88px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid rgba(255,255,255,0.25);
+        flex-shrink: 0;
+    }
+
+    .form-header__photo img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+    }
+
+    .form-header__eyebrow {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.65);
+        margin-bottom: 8px;
+    }
+
+    .form-header__title {
+        font-size: clamp(20px, 2.5vw, 28px);
+        font-weight: 600;
+        color: var(--bianco);
+        line-height: 1.25;
+        margin-bottom: 8px;
+    }
+
+    .form-header__sub {
+        font-size: 14px;
+        color: rgba(255,255,255,0.78);
+        line-height: 1.55;
+    }
+
+    .form-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 28px 44px 0;
+    }
+
+    .form-info__col {
+        background: var(--verde-light);
+        border-radius: 0;
+        padding: 18px 20px;
+    }
+
+    .form-info__col--yellow { border-left: 3px solid var(--arancio); }
+    .form-info__col--green  { border-left: 3px solid rgba(0,124,96,0.25); }
+
+    .form-info__label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .form-info__label--yellow { color: #8a3200; }
+    .form-info__label--green  { color: var(--grigio-mid); }
+
+    .form-info__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .form-info__list li {
+        font-size: 13px;
+        color: var(--grigio-dark);
+        padding-left: 18px;
+        position: relative;
+    }
+
+    .form-info__list li::before {
+        content: attr(data-bullet);
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+    }
+
+    .form-info__list--check li::before {
+        content: '✓';
+        color: var(--verde);
+    }
+
+    .form-info__list--dot li::before {
+        content: '·';
+        color: var(--grigio-mid);
+    }
+
+    .form-body {
+        padding: 28px 44px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .form-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .form-field label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--grigio-dark);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        padding: 13px 15px;
+        border: 1.5px solid rgba(0,0,0,0.11);
+        border-radius: 0;
+        font-size: 16px;
+        font-family: 'Jost', sans-serif;
+        color: var(--grigio-dark);
+        background: var(--bianco);
+        outline: none;
+        transition: border-color 0.2s ease;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+        border-color: var(--verde);
+    }
+
+    .form-field textarea { resize: vertical; }
+
+    .form-field__note {
+        font-size: 12px;
+        color: var(--grigio-mid);
+        margin-top: 2px;
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 20px;
+        padding: 4px 0;
+    }
+
+    .radio-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        color: var(--grigio-dark);
+        cursor: pointer;
+    }
+
+    .radio-label input[type="radio"] {
+        accent-color: var(--verde);
+        width: 16px; height: 16px;
+    }
+
+    .form-submit {
+        padding: 17px;
+        background: var(--verde);
+        color: var(--bianco);
+        border: none;
+        border-radius: 0;
+        font-size: 17px;
+        font-weight: 600;
+        font-family: 'Jost', sans-serif;
+        cursor: pointer;
+        transition: background 0.25s ease, transform 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .form-submit:hover {
+        background: var(--verde-scuro);
+        transform: translateY(-1px);
+    }
+
+    .form-privacy {
+        font-size: 12px;
+        color: var(--grigio-mid);
+        text-align: center;
+    }
+
+    .form-privacy a { color: var(--verde); text-decoration: underline; }
+
+    .form-note {
+        text-align: center;
+        font-size: 13px;
+        color: var(--grigio-mid);
+        margin-top: 16px;
+    }
+
+    /* ============================================================
+       CTA INLINE BOX
+    ============================================================ */
+    .cta-box {
+        text-align: center;
+        margin-top: 52px;
+    }
+
+    .cta-box__sub {
+        font-size: 13px;
+        color: var(--grigio-mid);
+        margin-top: 12px;
+    }
+
+    /* ============================================================
+       SHOWROOM
+    ============================================================ */
+    .showroom__grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 56px;
+        align-items: start;
+    }
+
+    .showroom__info-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .showroom__info-icon {
+        width: 38px; height: 38px;
+        border-radius: 0;
+        background: rgba(0,124,96,0.07);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .showroom__info-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--grigio-mid);
+        margin-bottom: 3px;
+    }
+
+    .showroom__info-value {
+        font-size: 15px;
+        color: var(--grigio-dark);
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .showroom__photos {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .showroom__photo-placeholder {
+        aspect-ratio: 1;
+        background: var(--bianco);
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: 2px dashed rgba(0,124,96,0.15);
+        font-size: 10px;
+        color: var(--grigio-mid);
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .showroom__map {
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        height: 380px;
+    }
+
+    .showroom__map iframe {
+        width: 100%; height: 100%;
+        border: 0;
+        display: block;
+    }
+
+    /* ============================================================
+       STICKY MOBILE BAR
+    ============================================================ */
+    .sticky-bar {
+        display: none;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 300;
+        background: var(--arancio);
+        padding: 14px 16px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+
+    .sticky-bar a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: var(--bianco);
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+        background: var(--verde-scuro);
+        color: rgba(255,255,255,0.6);
+        padding: 32px 0;
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    footer a { color: rgba(255,255,255,0.7); text-decoration: underline; }
+
+    /* ============================================================
+       MEDIA QUERIES
+    ============================================================ */
+
+    /* Desktop — mostra form nella hero, nascondi CTA buttons */
+    @media (min-width: 768px) {
+        .header__cta { display: block; }
+        .hero__form-card { display: block !important; }
+        .hero__ctas { display: none !important; }
+        #hero-form-mobile-wrap { display: none !important; }
+    }
+
+    /* Mobile (max 767px) */
+    @media (max-width: 767px) {
+
+        /* Base */
+        .wrap, .wrap-sm { padding: 0 16px; width: 100%; }
+        * { box-sizing: border-box; }
+        .section { padding: 60px 0; }
+        .section-head { margin-bottom: 40px; }
+
+        /* Hero form desktop — nascosto su mobile */
+        .hero__form-card { display: block !important; }
+        /* CTA buttons nascosti — il form li sostituisce */
+        .hero__ctas { display: none !important; }
+
+        /* Hero inner — colonna singola su mobile */
+        .hero__inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+        /* Hero form card su mobile — bianco come desktop */
+        .hero__form-card {
+            background: var(--bianco) !important;
+            border-top: 3px solid var(--arancio);
+            padding: 24px 20px !important;
+        }
+        .hero__form-card-title { color: var(--grigio-dark) !important; }
+        .hero__form-card-sub { color: var(--grigio-mid) !important; }
+        .hero__form-card .form-field label { color: var(--grigio-dark) !important; }
+        .hero__form-card .form-field input {
+            background: var(--bianco) !important;
+            border-color: rgba(0,0,0,0.12) !important;
+            color: var(--grigio-dark) !important;
+            font-size: 16px !important;
+        }
+        .hero__form-card .form-field input::placeholder { color: rgba(0,0,0,0.35) !important; }
+        .hero__form-card .form-field input:focus { border-color: var(--verde) !important; }
+        .hero__form-card-note { color: var(--grigio-mid) !important; }
+
+        /* Griglie form — 1 colonna su mobile */
+        .hero__form-card [style*="grid-template-columns:1fr 1fr"] {
+            grid-template-columns: 1fr !important;
+        }
+
+        /* Badges — spostati sotto al form su mobile */
+        .hero__badges { order: 3; margin-top: 20px; }
+        .hero__form-card { order: 2; }
+        .hero__content { display: flex; flex-direction: column; }
+        .hero__eyebrow { order: 0; }
+        .hero__title { order: 1; }
+        .hero__sub { order: 2; }
+
+        /* Scroll arrow — nascosta su mobile, il form già mostra che c'è altro */
+        .scroll-arrow { display: none; }
+
+        /* Link scroll — visibile solo su mobile */
+        .hero__scroll-link { display: block; }
+
+        /* Logo mobile — più piccolo */
+        .logo__img { height: 48px !important; }
+
+        /* Hero — padding top alto per staccarsi dall'header fixed */
+        .hero { padding: 96px 0 64px; }
+        .hero__eyebrow { margin-bottom: 16px; }
+        .hero__title { font-size: clamp(28px, 8vw, 36px); line-height: 1.2; margin-bottom: 18px; }
+        .hero__sub { font-size: 17px; line-height: 1.65; margin-bottom: 28px; }
+        .hero__ctas { flex-direction: column; gap: 10px; }
+        .hero__ctas .btn { justify-content: center; width: 100%; padding: 16px 20px; }
+        .hero__badges { margin-top: 20px; gap: 6px; }
+        .hero__badges .badge { font-size: 12px; padding: 5px 12px; }
+
+        /* Proof strip */
+        .proof-strip__grid { gap: 0; }
+        .proof-strip__item {
+            min-width: 48%;
+            border-right: none;
+            border-bottom: 1px solid rgba(0,124,96,0.08);
+        }
+        .proof-strip__item:nth-child(odd) {
+            border-right: 1px solid rgba(0,124,96,0.08);
+        }
+
+        /* Infiltrazione */
+        .infiltrazione__grid {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+        .infiltrazione__img-wrap {
+            aspect-ratio: 4/3;
+            order: -1;
+        }
+
+        /* Recensioni */
+        .recensioni__grid { grid-template-columns: 1fr; }
+
+        /* Processo */
+        .processo__layout {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .processo__david { display: none; }
+        .step { grid-template-columns: 48px 1fr; gap: 16px; }
+        .step__num { width: 48px; height: 48px; font-size: 18px; }
+        .step::before { left: 23px; top: 48px; }
+        .processo__cta-box { padding: 22px 20px; }
+
+        /* FAQ */
+        .faq-trigger { padding: 18px 20px; }
+        .faq-trigger__text { font-size: 15px; }
+        .faq-body { padding: 0 20px 18px; font-size: 15px; }
+
+        /* Form */
+        .form-header {
+            grid-template-columns: 1fr;
+            gap: 16px;
+            padding: 24px 20px;
+        }
+        .form-header__photo { width: 72px; height: 72px; }
+        .form-info { grid-template-columns: 1fr; padding: 20px 20px 0; }
+        .form-body { padding: 22px 20px 32px; }
+        .form-row-2 { grid-template-columns: 1fr; }
+
+        /* Showroom */
+        .showroom__grid { grid-template-columns: 1fr; gap: 32px; }
+        .showroom__map { height: 260px; }
+
+        /* Sticky bar */
+        .sticky-bar { display: block; }
+
+        /* Body bottom padding for sticky bar */
+        body { padding-bottom: 60px; }
+    }
+
+    </style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="header">
+    <div class="wrap">
+        <div class="header__inner">
+            <a href="#" class="logo">
+                <img src="LogoFORME_bianco.png" alt="FORME" class="logo__img">
+            </a>
+            <div class="header__cta">
+                <a href="#contatto" class="btn btn--ghost-white" style="font-size:15px; padding:10px 22px;">Richiedi preventivo →</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero">
+    <div class="wrap">
+        <div class="hero__inner">
+
+            <!-- Colonna sinistra — testo -->
+            <div class="hero__content">
+                <span class="hero__eyebrow">Fotovoltaico residenziale · Bologna e provincia</span>
+                <h1 class="hero__title">
+                    Installare il <span style="color: var(--arancio);">fotovoltaico</span> è facile.<br>
+                    Farlo <span style="color: var(--arancio);">senza danneggiare il tetto</span> è un'altra storia.
+                </h1>
+                <p class="hero__sub">
+                    Da FORME veniamo dalla bioedilizia. Sul tuo tetto ci saliamo sapendo già cosa stiamo toccando.
+                </p>
+                <div class="hero__badges">
+                    <span class="badge badge--white-ghost">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--arancio)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Sopralluogo gratuito
+                    </span>
+                    <span class="badge badge--white-ghost">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--arancio)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Senza impegno
+                    </span>
+                    <span class="badge badge--white-ghost">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--arancio)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        David ti richiama entro il giorno lavorativo successivo
+                    </span>
+                </div>
+                <!-- CTA solo mobile -->
+                <div class="hero__ctas">
+                    <a href="#contatto" class="btn btn--primary btn--lg">Richiedi preventivo →</a>
+                    <a href="#dove-siamo" class="btn btn--ghost-white btn--lg">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Visita lo showroom
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colonna destra — form (solo desktop) -->
+            <div class="hero__form-card">
+                <div class="hero__form-card-title">Parla con David — è gratuito</div>
+                <div class="hero__form-card-sub">Ti richiama entro il giorno lavorativo successivo. Senza impegno.</div>
+                <form id="hero-form-desktop" onsubmit="submitHeroForm(event, this)">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
+                        <div class="form-field">
+                            <label for="hd-nome">Nome *</label>
+                            <input type="text" id="hd-nome" name="nome" placeholder="Es. Mario" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="hd-cognome">Cognome *</label>
+                            <input type="text" id="hd-cognome" name="cognome" placeholder="Es. Rossi" required>
+                        </div>
+                    </div>
+                    <div class="form-field" style="margin-bottom:14px;">
+                        <label for="hd-email">Email *</label>
+                        <input type="email" id="hd-email" name="email" placeholder="Es. mario.rossi@email.it" required>
+                    </div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
+                        <div class="form-field">
+                            <label for="hd-telefono">Telefono *</label>
+                            <input type="tel" id="hd-telefono" name="telefono" placeholder="333 1234567" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="hd-comune">Comune *</label>
+                            <input type="text" id="hd-comune" name="comune" placeholder="Es. Bologna" required>
+                        </div>
+                    </div>
+                    <div class="form-field" style="margin-bottom:14px;">
+                        <label for="hd-note" style="font-size:13px;font-weight:600;color:var(--grigio-dark);display:block;margin-bottom:6px;">Note / Richieste particolari</label>
+                        <textarea id="hd-note" name="note" rows="2" style="width:100%;padding:12px 14px;border:1.5px solid rgba(0,0,0,0.12);font-size:15px;font-family:'Jost',sans-serif;color:var(--grigio-dark);background:var(--bianco);outline:none;resize:vertical;transition:border-color 0.2s ease;" placeholder="Es. 'Ho già un preventivo' o 'Mi interessa la batteria'"></textarea>
+                    </div>
+                    <button type="submit" class="hero__form-card-submit">
+                        Richiedi preventivo →
+                    </button>
+                </form>
+                <p class="hero__form-card-note">Lun–Ven 9–18 · Showroom a Casalecchio di Reno</p>
+                <!-- Link scroll — visibile solo su mobile -->
+                <a href="#perche-noi" class="hero__scroll-link">Non sei ancora convinto? Scopri come lavoriamo ⬇</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scroll arrow -->
+    <a href="#perche-noi" class="scroll-arrow" aria-label="Scorri verso il basso">
+        <span class="scroll-arrow__label">Scopri di più</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+        </svg>
+    </a>
+
+</section>
+
+
+<!-- ============================================================
+     PROOF STRIP — bg: bianco
+============================================================ -->
+<div class="proof-strip bg-white" id="proof">
+    <div class="wrap">
+        <div class="proof-strip__grid">
+            <div class="proof-strip__item">
+                <div class="proof-strip__num">9</div>
+                <div class="proof-strip__label">anni di esperienza<br>in bioedilizia e coperture</div>
+            </div>
+            <div class="proof-strip__item">
+                <div class="proof-strip__num">0</div>
+                <div class="proof-strip__label">danni strutturali<br>su impianti FORME</div>
+            </div>
+            <div class="proof-strip__item">
+                <div class="proof-strip__num">100%</div>
+                <div class="proof-strip__label">dei cantieri con sopralluogo<br>tecnico prima di procedere</div>
+            </div>
+            <div class="proof-strip__item">
+                <div class="proof-strip__num">1</div>
+                <div class="proof-strip__label">referente unico<br>dall'inizio alla fine</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================================
+     INFILTRAZIONE — bg: bianco
+============================================================ -->
+<section class="section bg-white" id="perche-noi">
+    <div class="wrap">
+        <div class="infiltrazione__grid">
+
+            <!-- Immagine -->
+            <div class="infiltrazione__img-wrap">
+                <img src="infiltrazione.jpg" alt="Macchia di infiltrazione su soffitto">
+                <div class="infiltrazione__caption">
+                    Questo è quello che succede quando chi installa i pannelli non capisce niente di tetti.
+                </div>
+            </div>
+
+            <!-- Testo -->
+            <div class="infiltrazione__text">
+                <span class="eyebrow">Il problema che nessuno ti dice</span>
+                <h2 class="section-title">
+                    I pannelli li vedi sul tetto.<br>I danni li trovi dentro casa.
+                </h2>
+                <div class="divider"></div>
+                <p class="infiltrazione__body">
+                    I fori per i tasselli di ancoraggio, se non sigillati con il materiale giusto, diventano vie d'acqua. Il danno non è visibile dall'esterno — si manifesta mesi dopo, sul soffitto del piano di sotto.
+                </p>
+                <p class="infiltrazione__body">
+                    A quel punto dimostrare il collegamento con l'installazione è quasi impossibile. E l'installatore, nel frattempo, è già passato ad altri cantieri.
+                </p>
+                <div class="infiltrazione__close">
+                    Da FORME veniamo dalla bioedilizia. Quando saliamo sul tuo tetto, sappiamo già cosa non dobbiamo toccare — e come sigillare ogni punto di ancoraggio perché regga per i prossimi 25 anni.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     RECENSIONI — bg: beige
+============================================================ -->
+<section class="section bg-beige">
+    <div class="wrap">
+
+        <div class="section-head">
+            <span class="eyebrow">Impianti reali · Clienti reali</span>
+            <h2 class="section-title">Chiunque installa.<br>Quello che cambia è come lo fa.</h2>
+        </div>
+
+        <div class="recensioni__grid">
+
+            <!-- Card 1 -->
+            <div class="rec-card">
+                <div class="rec-card__img">
+                    <img src="lizzano.jpg" alt="Impianto Lizzano in Belvedere">
+                </div>
+                <div class="rec-card__meta">
+                    <div class="rec-card__city">Lizzano in Belvedere</div>
+                    <div class="rec-card__profile">Villa indipendente · famiglia 4 persone</div>
+                    <div class="rec-card__tags">
+                        <span class="badge badge--green-light">6 kW</span>
+                        <span class="badge badge--green-light">Batteria 10 kWh</span>
+                        <span class="badge badge--yellow-light">2.060€/anno risparmiati</span>
+                    </div>
+                </div>
+                <div class="rec-card__body">
+                    <div class="rec-card__stars">★★★★★</div>
+                    <p class="rec-card__quote">
+                        "Prima di parlarmi di pannelli, sono venuti a vedere il tetto. Mi hanno spiegato cosa avrebbero fatto e perché. Nessun altro installatore lo aveva fatto. Alla fine zero problemi, zero sorprese."
+                    </p>
+                    <div class="rec-card__author">Marco T. <span>· Lizzano in Belvedere</span></div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="rec-card">
+                <div class="rec-card__img">
+                    <img src="santagata.jpg" alt="Impianto Sant'Agata Bolognese">
+                </div>
+                <div class="rec-card__meta">
+                    <div class="rec-card__city">Sant'Agata Bolognese</div>
+                    <div class="rec-card__profile">Casa bifamiliare · 2 famiglie</div>
+                    <div class="rec-card__tags">
+                        <span class="badge badge--green-light">4×5 kW</span>
+                        <span class="badge badge--green-light">Batteria 5 kWh</span>
+                        <span class="badge badge--yellow-light">1.600€/anno risparmiati</span>
+                    </div>
+                </div>
+                <div class="rec-card__body">
+                    <div class="rec-card__stars">★★★★★</div>
+                    <p class="rec-card__quote">
+                        "Avevo paura che con due unità abitative si creassero problemi sul tetto. David ha coordinato tutto — tecnici, pratiche, allaccio. Un unico interlocutore per una situazione complicata. Non pensavo fosse possibile."
+                    </p>
+                    <div class="rec-card__author">Stefania M. <span>· Sant'Agata Bolognese</span></div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="rec-card">
+                <div class="rec-card__img">
+                    <img src="bergamo.jpg" alt="Impianto Bergamo">
+                </div>
+                <div class="rec-card__meta">
+                    <div class="rec-card__city">Bergamo</div>
+                    <div class="rec-card__profile">Villa · coppia con pompa di calore</div>
+                    <div class="rec-card__tags">
+                        <span class="badge badge--green-light">6×5 kW</span>
+                        <span class="badge badge--green-light">Autoconsumo 60%</span>
+                        <span class="badge badge--yellow-light">1.300€/anno risparmiati</span>
+                    </div>
+                </div>
+                <div class="rec-card__body">
+                    <div class="rec-card__stars">★★★★★</div>
+                    <p class="rec-card__quote">
+                        "Ho avuto un problema con l'inverter dopo sei mesi. Ho chiamato David, è venuto il giorno dopo e ha gestito tutto lui. Lo stesso numero di quando mi aveva fatto il preventivo. Così dev'essere."
+                    </p>
+                    <div class="rec-card__author">Giulia R. <span>· Bergamo</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="rec-note">Dati basati su impianti reali. I risultati variano in base a consumi, esposizione e presenza di accumulo.</p>
+
+        <div class="cta-box">
+            <a href="#contatto" class="btn btn--green btn--lg">Richiedi preventivo →</a>
+            <p class="cta-box__sub">Senza impegno · David ti richiama entro il giorno lavorativo successivo</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ============================================================
+     PROCESSO — bg: bianco
+============================================================ -->
+<section class="section bg-white" id="come-funziona">
+    <div class="wrap">
+
+        <div class="section-head">
+            <span class="eyebrow">Come funziona</span>
+            <h2 class="section-title">Dalla prima chiamata all'impianto attivo.<br>Una persona sola, dall'inizio alla fine.</h2>
+        </div>
+
+        <div class="processo__layout">
+
+            <!-- David — colonna sinistra (nascosta su mobile) -->
+            <div class="processo__david">
+                <div class="processo__david-img">
+                    <img src="david.jpg" alt="David — referente FORME">
+                </div>
+                <div class="processo__david-card">
+                    <div class="processo__david-name">David</div>
+                    <div class="processo__david-role">Referente commerciale FORME</div>
+                    <div class="processo__david-services">Preventivo · Sopralluogo · Assistenza</div>
+                    <div class="processo__david-note">Lo stesso numero dal primo giorno all'ultimo.</div>
+                </div>
+            </div>
+
+            <!-- Steps -->
+            <div>
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step__num">1</div>
+                        <div class="step__content">
+                            <div class="step__timing">Entro il giorno lavorativo successivo</div>
+                            <h3 class="step__title">Parli con David</h3>
+                            <p class="step__body">Compili il form o ci chiami. David ti richiama entro il giorno lavorativo successivo — non un centralino, non un assistente. La stessa persona che seguirà il tuo caso dall'inizio alla fine. Ti chiede tutto quello che serve per capire la tua situazione.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step__num">2</div>
+                        <div class="step__content">
+                            <div class="step__timing">Numeri reali · nessuna promessa esagerata</div>
+                            <h3 class="step__title">Preventivo su misura</h3>
+                            <p class="step__body">David ti prepara un'analisi economica basata sui tuoi consumi reali — dimensionamento, risparmio stimato, tutti i costi. Hai tutto il tempo per valutare con calma. Nessun "offerta valida solo oggi".</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step__num">3</div>
+                        <div class="step__content">
+                            <div class="step__timing">Dopo l'accettazione · sempre gratuito</div>
+                            <h3 class="step__title">Sopralluogo tecnico sul tetto</h3>
+                            <p class="step__body">I nostri tecnici vengono a vedere il tuo tetto di persona — struttura, copertura, esposizione, punti critici. Per capire esattamente come lavorare senza danneggiare niente.</p>
+                            <span class="step__badge">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Sempre gratuito
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step__num step__num--last">4</div>
+                        <div class="step__content">
+                            <div class="step__timing">Installazione + pratiche + assistenza permanente</div>
+                            <h3 class="step__title">Impianto attivo. David rimane.</h3>
+                            <p class="step__body">FORME coordina l'installazione con la propria rete di tecnici certificati e gestisce tutta la burocrazia — allaccio, GSE, pratiche comunali. Dopo l'attivazione David rimane il tuo referente. Stesso numero. Per tutta la vita dell'impianto.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="processo__cta-box">
+                    <p>Il primo passo non ti impegna a niente.</p>
+                    <p>Compili il form. David ti richiama. Poi decidi con calma.</p>
+                    <a href="#contatto" class="btn btn--green">Richiedi preventivo →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ — bg: beige
+============================================================ -->
+<section class="section bg-beige" id="domande">
+    <div class="wrap-sm">
+
+        <div class="section-head">
+            <span class="eyebrow">Domande frequenti</span>
+            <h2 class="section-title">Tutto quello che vuoi sapere<br>prima di fare il primo passo.</h2>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span class="faq-trigger__text">Venite davvero a vedere il tetto prima di installare?</span>
+                    <span class="faq-trigger__icon">+</span>
+                </button>
+                <div class="faq-body">
+                    Sì — il sopralluogo tecnico fa parte del nostro processo standard, dopo l'accettazione del preventivo, ed è sempre gratuito. I nostri tecnici valutano struttura, copertura, esposizione e punti critici. Non per una formalità: per capire esattamente come lavorare senza danneggiare niente.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span class="faq-trigger__text">Se il mio tetto ha problemi me lo dite prima o dopo?</span>
+                    <span class="faq-trigger__icon">+</span>
+                </button>
+                <div class="faq-body">
+                    Prima. Grazie alla nostra esperienza in bioedilizia, siamo in grado di riconoscere criticità strutturali o di copertura che altri ignorano. Se il tetto ha problemi che rischiano di compromettere l'installazione, te lo diciamo chiaramente — e ti aiutiamo a capire come risolverli. Nessuna sorpresa dopo la firma.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span class="faq-trigger__text">Come fate a garantire che non danneggiate il tetto durante l'installazione?</span>
+                    <span class="faq-trigger__icon">+</span>
+                </button>
+                <div class="faq-body">
+                    FORME nasce dalla bioedilizia e dalla fornitura di materiali da costruzione. Conosciamo le coperture, le strutture portanti e i sistemi di impermeabilizzazione prima ancora di conoscere i pannelli. I tecnici con cui lavoriamo sono selezionati anche per la loro competenza edile — non solo elettrica. Ogni punto di ancoraggio viene sigillato con i materiali giusti. Ogni cavo posato senza interferire con grondaie o manti di copertura.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span class="faq-trigger__text">Operate solo a Bologna o anche in provincia?</span>
+                    <span class="faq-trigger__icon">+</span>
+                </button>
+                <div class="faq-body">
+                    Operiamo principalmente su Bologna e provincia. Se sei in zona limitrofa, contattaci comunque — valutiamo caso per caso. Preferiamo lavorare dove possiamo seguire i clienti da vicino, non installare e sparire a 300 km di distanza.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span class="faq-trigger__text">Offrite soluzioni di finanziamento?</span>
+                    <span class="faq-trigger__icon">+</span>
+                </button>
+                <div class="faq-body">
+                    Sì. Collaboriamo con istituti bancari per offrirti soluzioni di finanziamento personalizzate. Se il costo iniziale è un tema, David ti illustra le opzioni disponibili durante il preventivo — senza impegno. Passare al fotovoltaico non deve essere un salto nel vuoto.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span class="faq-trigger__text">Dopo l'installazione chi si occupa della pulizia e manutenzione?</span>
+                    <span class="faq-trigger__icon">+</span>
+                </button>
+                <div class="faq-body">
+                    Noi. La pulizia dei pannelli e la manutenzione ordinaria e straordinaria fanno parte dei nostri servizi continuativi. Un impianto dura 25 anni — va seguito per produrre al meglio per tutta la sua vita. David è il tuo punto di riferimento anche per questo.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span class="faq-trigger__text">Devo seguire io le pratiche con il GSE e l'allaccio?</span>
+                    <span class="faq-trigger__icon">+</span>
+                </button>
+                <div class="faq-body">
+                    No. Tutta la burocrazia — allaccio con e-distribuzione, attivazione GSE, pratiche comunali — la gestiamo noi. Non devi capire nulla di iter burocratici. L'unica cosa che ti chiediamo è di firmare dove necessario. David ti aggiorna su ogni passaggio — non aspetti mai senza sapere dove siete.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cta-box">
+            <p style="font-size:17px; color:var(--grigio-mid); margin-bottom:20px;">Hai altre domande? David risponde direttamente.</p>
+            <a href="#contatto" class="btn btn--green btn--lg">Richiedi preventivo →</a>
+            <p class="cta-box__sub">Showroom a Casalecchio di Reno · Lun–Ven 9–18</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FORM — bg: bianco
+============================================================ -->
+<section class="section bg-white" id="contatto">
+    <div class="wrap-sm">
+
+        <div class="form-card">
+
+            <!-- Header verde con David -->
+            <div class="form-header">
+                <div class="form-header__photo">
+                    <img src="david.jpg" alt="David — referente FORME">
+                </div>
+                <div>
+                    <div class="form-header__eyebrow">Parla con David</div>
+                    <h2 class="form-header__title">Richiedi il tuo preventivo personalizzato</h2>
+                    <p class="form-header__sub">David ti ricontatta entro il giorno lavorativo successivo. Senza pressioni — prima capisce la tua situazione, poi lavora su numeri reali.</p>
+                </div>
+            </div>
+
+            <!-- Form fields -->
+            <form class="form-body" id="contact-form">
+
+                <div class="form-row-2">
+                    <div class="form-field">
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" name="nome" placeholder="Es. Mario" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="cognome">Cognome *</label>
+                        <input type="text" id="cognome" name="cognome" placeholder="Es. Rossi" required>
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-field">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="mario.rossi@email.it" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="telefono">Telefono *</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Es. 333 1234567" required>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="localita">Comune *</label>
+                    <input type="text" id="localita" name="localita" placeholder="Es. Bologna, Casalecchio, San Lazzaro..." required>
+                    <span class="form-field__note">Serviamo principalmente Bologna e provincia</span>
+                </div>
+
+
+                <div class="form-field">
+                    <label for="note">Note o richieste particolari</label>
+                    <textarea id="note" name="note" rows="4" placeholder="Es. 'Vorrei capire se convengono le batterie' o 'Ho già altri preventivi'"></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">
+                    <span>Richiedi preventivo</span>
+                    <span>→</span>
+                </button>
+
+                <p class="form-privacy">
+                    Inviando il form accetti la <a href="https://www.iubenda.com/privacy-policy/43497530" target="_blank" rel="noopener">Privacy Policy</a>. I tuoi dati saranno utilizzati solo per ricontattarti.
+                </p>
+
+            </form>
+
+        </div>
+
+        <p class="form-note">David risponde lun–ven · Showroom a Casalecchio di Reno (BO)</p>
+
+    </div>
+</section>
+
+
+<!-- ============================================================
+     SHOWROOM — bg: beige
+============================================================ -->
+<section class="section bg-beige" id="dove-siamo">
+    <div class="wrap">
+
+        <div class="section-head">
+            <span class="eyebrow">Presenza fisica</span>
+            <h2 class="section-title">Vieni a trovarci. Siamo qui.</h2>
+            <p class="section-intro">Uno showroom reale dove puoi parlare con David di persona, vedere i prodotti e fare domande senza fretta.</p>
+        </div>
+
+        <div class="showroom__grid">
+
+            <!-- Info -->
+            <div>
+                <div class="showroom__info-row">
+                    <div class="showroom__info-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2.2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <div class="showroom__info-label">Indirizzo</div>
+                        <div class="showroom__info-value">Casalecchio di Reno (BO)</div>
+                    </div>
+                </div>
+                <div class="showroom__info-row">
+                    <div class="showroom__info-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <div class="showroom__info-label">Orari</div>
+                        <div class="showroom__info-value">Lun–Ven: 9:00–18:00<br>Sabato: su appuntamento</div>
+                    </div>
+                </div>
+                <div class="showroom__info-row">
+                    <div class="showroom__info-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47 2 2 0 0 1 3.56 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                        <div class="showroom__info-label">Referente</div>
+                        <div class="showroom__info-value">David — sempre lo stesso numero</div>
+                    </div>
+                </div>
+                <div class="showroom__info-row">
+                    <div class="showroom__info-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2.2" stroke-linecap="round"><path d="M1 6l10 4L21 6M1 6v12l10 4m0-16v16m10-16v12l-10 4"/></svg>
+                    </div>
+                    <div>
+                        <div class="showroom__info-label">Cosa puoi vedere</div>
+                        <div class="showroom__info-value" style="font-size:13px;">Pannelli, inverter e batterie esposti · esempi di fissaggio tetto · materiali e sistemi di impermeabilizzazione · preventivo dal vivo con David</div>
+                    </div>
+                </div>
+
+                
+
+                <a href="https://share.google/o6Ng2SyNNdRNLoL2c" target="_blank" rel="noopener" class="btn btn--green" style="margin-top:20px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Apri in Google Maps
+                </a>
+            </div>
+
+            <!-- Mappa -->
+            <div class="showroom__map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5692.222410978895!2d11.247333890594318!3d44.49238812318019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fd7003a9d44bb%3A0xc7fb561c7ebc35b9!2sForme%20Srl%20SB!5e0!3m2!1sit!2sit!4v1772183489138!5m2!1sit!2sit"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     STICKY MOBILE BAR
+============================================================ -->
+<div class="sticky-bar">
+    <a href="#contatto">
+        <span>Richiedi preventivo</span>
+        <span>→</span>
+    </a>
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+    <div class="wrap">
+        <p>© 2026 FORME - Forniture Materiali Ecosostenibili</p>
+        <p>Casalecchio di Reno (BO) | P.IVA 01234567890</p>
+        <p><a href="https://www.iubenda.com/privacy-policy/43497530" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://www.iubenda.com/privacy-policy/43497530/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a></p>
+    </div>
+</footer>
+
+
+<script>
+    // ─── CONFIG ────────────────────────────────────────────────
+    const ENDPOINT  = 'https://script.google.com/macros/s/AKfycbzc8kwaDpwjvytJsnJtmYP5nq3bQE4DT6cyiLrWfT1396dHFYp9PKHzSQYNPG9knytm/exec';
+    const PIXEL_ID  = '1828554751139697';
+
+    // ─── HEADER SCROLL ─────────────────────────────────────────
+    const header = document.querySelector('.header');
+    const stickyBar = document.querySelector('.sticky-bar');
+    const hero = document.querySelector('.hero');
+    const formSection = document.getElementById('contatto');
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const heroHeight = hero ? hero.offsetHeight : 400;
+        if (scrollY > 60) header.classList.add('header--scrolled');
+        else header.classList.remove('header--scrolled');
+        if (stickyBar) {
+            const formTop = formSection ? formSection.getBoundingClientRect().top : 9999;
+            stickyBar.style.display = (scrollY > heroHeight && formTop > window.innerHeight) ? 'block' : 'none';
+        }
+    });
+
+    // ─── HELPERS ───────────────────────────────────────────────
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? decodeURIComponent(match[2]) : '';
+    }
+
+    function generateEventId() {
+        return 'forme_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    async function getClientMeta() {
+        let ip = '';
+        try {
+            const res  = await fetch('https://api.ipify.org?format=json');
+            const json = await res.json();
+            ip = json.ip || '';
+        } catch(e) { ip = ''; }
+
+        // fbc: cookie se presente, altrimenti ricostruisce da fbclid nell'URL
+        let fbc = getCookie('_fbc');
+        if (!fbc) {
+            const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+            if (fbclid) fbc = `fb.1.${Date.now()}.${fbclid}`;
+        }
+
+        return {
+            user_agent: navigator.userAgent || '',
+            fbc:        fbc,
+            fbp:        getCookie('_fbp'),
+            ip:         ip
+        };
+    }
+
+    // ─── META PIXEL — EVENTO LEAD ──────────────────────────────
+    // Aggiorna l'Advanced Matching con i dati del form e traccia Lead
+    function firePixelLead(data, eventId) {
+        if (typeof fbq === 'undefined') return;
+        fbq('init', PIXEL_ID, {
+            em: data.email    || '',
+            ph: data.telefono || '',
+            fn: data.nome     || '',
+            ln: data.cognome  || '',
+            ct: data.comune   || ''
+        });
+        fbq('track', 'Lead', {}, { eventID: eventId });
+    }
+
+    // ─── INVIO AL WEBHOOK ──────────────────────────────────────
+    function sendToSheet(data) {
+        return fetch(ENDPOINT, {
+            method:  'POST',
+            mode:    'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(data)
+        });
+    }
+
+    // ─── MESSAGGIO DI CONFERMA ─────────────────────────────────
+    function showSuccess(container) {
+        container.innerHTML = `
+            <div style="text-align:center;padding:40px 24px;background:var(--verde-light);border-left:4px solid var(--verde);">
+                <div style="font-size:32px;margin-bottom:12px;">✓</div>
+                <p style="font-size:20px;font-weight:600;color:var(--verde);margin-bottom:8px;">Richiesta ricevuta!</p>
+                <p style="color:var(--grigio-mid);font-size:15px;">David ti ricontatterà entro il prossimo giorno lavorativo.</p>
+            </div>`;
+    }
+
+    // ─── HERO MINI FORM ────────────────────────────────────────
+    async function submitHeroForm(e, form) {
+        e.preventDefault();
+        const meta    = await getClientMeta();
+        const eventId = generateEventId();
+        const data = {
+            source:     'hero',
+            nome:       form.querySelector('[name="nome"]').value,
+            cognome:    form.querySelector('[name="cognome"]').value,
+            email:      form.querySelector('[name="email"]').value,
+            telefono:   form.querySelector('[name="telefono"]').value,
+            comune:     form.querySelector('[name="comune"]').value,
+            note:       form.querySelector('[name="note"]') ? form.querySelector('[name="note"]').value : '',
+            user_agent: meta.user_agent,
+            fbc:        meta.fbc,
+            fbp:        meta.fbp,
+            ip:         meta.ip,
+            event_id:   eventId
+        };
+        firePixelLead(data, eventId);
+        sendToSheet(data);
+        showSuccess(form);
+    }
+
+    // ─── FAQ ACCORDION ─────────────────────────────────────────
+    function toggleFaq(btn) {
+        const item   = btn.closest('.faq-item');
+        const body   = item.querySelector('.faq-body');
+        const icon   = btn.querySelector('.faq-trigger__icon');
+        const isOpen = body.style.display === 'block';
+        document.querySelectorAll('.faq-body').forEach(b => b.style.display = 'none');
+        document.querySelectorAll('.faq-trigger__icon').forEach(i => i.textContent = '+');
+        if (!isOpen) { body.style.display = 'block'; icon.textContent = '×'; }
+    }
+
+    // ─── FORM PRINCIPALE ───────────────────────────────────────
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        function val(id) { const el = document.getElementById(id); return el ? el.value : ''; }
+
+        const btn = this.querySelector('.form-submit');
+        btn.disabled = true;
+        btn.querySelector('span').textContent = 'Invio in corso…';
+
+        const meta    = await getClientMeta();
+        const eventId = generateEventId();
+        const data = {
+            source:     'form_principale',
+            nome:       val('nome'),
+            cognome:    val('cognome'),
+            email:      val('email'),
+            telefono:   val('telefono'),
+            comune:     val('localita'),
+            note:       val('note'),
+            user_agent: meta.user_agent,
+            fbc:        meta.fbc,
+            fbp:        meta.fbp,
+            ip:         meta.ip,
+            event_id:   eventId
+        };
+
+        firePixelLead(data, eventId);
+        sendToSheet(data).finally(() => showSuccess(this));
+    });
+</script>
+
+</body>
+</html>
