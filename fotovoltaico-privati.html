@@ -9,7 +9,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Iubenda Cookie Solution -->
+    <!-- ═══════════════════════════════════════════════════════
+         1. GOOGLE CONSENT MODE v2 — default
+         DEVE stare PRIMA di GTM. Tutto negato di default,
+         security_storage sempre granted (cookie tecnici).
+    ═══════════════════════════════════════════════════════ -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+        analytics_storage:       'denied',
+        ad_storage:              'denied',
+        ad_user_data:            'denied',
+        ad_personalization:      'denied',
+        functionality_storage:   'denied',
+        personalization_storage: 'denied',
+        security_storage:        'granted',
+        wait_for_update:         500
+    });
+    </script>
+    <!-- End Consent Mode default -->
+
+    <!-- ═══════════════════════════════════════════════════════
+         2. GOOGLE TAG MANAGER
+    ═══════════════════════════════════════════════════════ -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KBHLWPK2');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- ═══════════════════════════════════════════════════════
+         3. IUBENDA — con callback che aggiorna Consent Mode v2
+         Mapping purpose:
+           2 = funzionalità  → functionality_storage
+           3 = esperienza    → personalization_storage
+           4 = misurazione   → analytics_storage
+           5 = marketing     → ad_storage, ad_user_data, ad_personalization
+    ═══════════════════════════════════════════════════════ -->
     <script type="text/javascript">
     var _iub = _iub || [];
     _iub.csConfiguration = {
@@ -30,7 +68,20 @@
         },
         "callback": {
             "onPreferenceExpressed": function(preference) {
-                if (preference && preference.purposes && preference.purposes[4] === true) {
+                if (!preference || !preference.purposes) return;
+
+                // ── Aggiorna Google Consent Mode v2 ──────────────
+                gtag('consent', 'update', {
+                    analytics_storage:       preference.purposes[4] ? 'granted' : 'denied',
+                    ad_storage:              preference.purposes[5] ? 'granted' : 'denied',
+                    ad_user_data:            preference.purposes[5] ? 'granted' : 'denied',
+                    ad_personalization:      preference.purposes[5] ? 'granted' : 'denied',
+                    functionality_storage:   preference.purposes[2] ? 'granted' : 'denied',
+                    personalization_storage: preference.purposes[3] ? 'granted' : 'denied'
+                });
+
+                // ── Inizializza Meta Pixel (scopo 5 = marketing) ─
+                if (preference.purposes[5] === true) {
                     initMetaPixel();
                 }
             }
@@ -40,7 +91,7 @@
     <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
     <!-- End Iubenda -->
 
-    <!-- Meta Pixel — si inizializza solo dopo consenso (scopo 4) -->
+    <!-- Meta Pixel — si inizializza solo dopo consenso (scopo 5 = marketing) -->
     <script>
     function initMetaPixel() {
         if (window._pixelLoaded) return;
@@ -1405,101 +1456,14 @@
         body { padding-bottom: 60px; }
     }
 
-    /* ============================================================
-       PRIVACY CHECKBOX — custom styling
-    ============================================================ */
-    .privacy-check {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        margin-bottom: 16px;
-        cursor: pointer;
-        line-height: 1.5;
-    }
-
-    .privacy-check input[type="checkbox"] {
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    .privacy-check__box {
-        flex-shrink: 0;
-        width: 20px;
-        height: 20px;
-        border: 2px solid rgba(0,0,0,0.2);
-        background: var(--bianco);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2px;
-        transition: border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .privacy-check input[type="checkbox"]:checked + .privacy-check__box {
-        background: var(--verde);
-        border-color: var(--verde);
-    }
-
-    .privacy-check input[type="checkbox"]:checked + .privacy-check__box::after {
-        content: '';
-        display: block;
-        width: 5px;
-        height: 9px;
-        border: 2px solid var(--bianco);
-        border-top: none;
-        border-left: none;
-        transform: rotate(45deg) translateY(-1px);
-    }
-
-    .privacy-check:hover .privacy-check__box {
-        border-color: var(--verde);
-    }
-
-    .privacy-check__label {
-        font-size: 13px;
-        color: var(--grigio-mid);
-        line-height: 1.55;
-    }
-
-    .privacy-check__label a {
-        color: var(--verde);
-        text-decoration: underline;
-    }
-
-    .privacy-check__label a:hover {
-        color: var(--verde-scuro);
-    }
-
-    .privacy-error {
-        display: none;
-        font-size: 12px;
-        color: #c0392b;
-        margin-top: -10px;
-        margin-bottom: 12px;
-        padding: 8px 12px;
-        background: rgba(192,57,43,0.07);
-        border-left: 3px solid #c0392b;
-    }
-
-    .privacy-error--visible {
-        display: block;
-    }
-
-    /* Checkbox nel form hero (sfondo bianco, spazio ridotto) */
-    .hero__form-card .privacy-check {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .hero__form-card .privacy-check__label {
-        font-size: 12px;
-    }
-
     </style>
 </head>
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBHLWPK2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ============================================================
      HEADER
@@ -1591,16 +1555,6 @@
                     <div class="form-field" style="margin-bottom:14px;">
                         <label for="hd-note" style="font-size:13px;font-weight:600;color:var(--grigio-dark);display:block;margin-bottom:6px;">Note / Richieste particolari</label>
                         <textarea id="hd-note" name="note" rows="2" style="width:100%;padding:12px 14px;border:1.5px solid rgba(0,0,0,0.12);font-size:15px;font-family:'Jost',sans-serif;color:var(--grigio-dark);background:var(--bianco);outline:none;resize:vertical;transition:border-color 0.2s ease;" placeholder="Es. 'Ho già un preventivo' o 'Mi interessa la batteria'"></textarea>
-                    </div>
-                    <label class="privacy-check">
-                        <input type="checkbox" id="hd-privacy" name="privacy" required>
-                        <span class="privacy-check__box"></span>
-                        <span class="privacy-check__label">
-                            Ho letto e accetto la <a href="https://www.iubenda.com/privacy-policy/43497530" target="_blank" rel="noopener">Privacy Policy</a> e acconsento al trattamento dei miei dati per ricevere informazioni commerciali e promozionali da FORME. *
-                        </span>
-                    </label>
-                    <div class="privacy-error" id="hd-privacy-error">
-                        Per inviare la richiesta è necessario accettare la Privacy Policy.
                     </div>
                     <button type="submit" class="hero__form-card-submit">
                         Richiedi preventivo →
@@ -2021,21 +1975,14 @@
                     <textarea id="note" name="note" rows="4" placeholder="Es. 'Vorrei capire se convengono le batterie' o 'Ho già altri preventivi'"></textarea>
                 </div>
 
-                <label class="privacy-check">
-                    <input type="checkbox" id="main-privacy" name="privacy" required>
-                    <span class="privacy-check__box"></span>
-                    <span class="privacy-check__label">
-                        Ho letto e accetto la <a href="https://www.iubenda.com/privacy-policy/43497530" target="_blank" rel="noopener">Privacy Policy</a> e acconsento al trattamento dei miei dati per ricevere informazioni commerciali e promozionali da FORME. *
-                    </span>
-                </label>
-                <div class="privacy-error" id="main-privacy-error">
-                    Per inviare la richiesta è necessario accettare la Privacy Policy.
-                </div>
-
                 <button type="submit" class="form-submit">
                     <span>Richiedi preventivo</span>
                     <span>→</span>
                 </button>
+
+                <p class="form-privacy">
+                    Inviando il form accetti la <a href="https://www.iubenda.com/privacy-policy/43497530" target="_blank" rel="noopener">Privacy Policy</a>. I tuoi dati saranno utilizzati solo per ricontattarti.
+                </p>
 
             </form>
 
@@ -2238,17 +2185,6 @@
     // ─── HERO MINI FORM ────────────────────────────────────────
     async function submitHeroForm(e, form) {
         e.preventDefault();
-
-        // Validazione privacy
-        const privacyCheck = form.querySelector('[name="privacy"]');
-        const privacyError = document.getElementById('hd-privacy-error');
-        if (!privacyCheck.checked) {
-            privacyError.classList.add('privacy-error--visible');
-            privacyCheck.closest('.privacy-check').querySelector('.privacy-check__box').style.borderColor = '#c0392b';
-            return;
-        }
-        privacyError.classList.remove('privacy-error--visible');
-
         const meta    = await getClientMeta();
         const eventId = generateEventId();
         const data = {
@@ -2284,18 +2220,6 @@
     // ─── FORM PRINCIPALE ───────────────────────────────────────
     document.getElementById('contact-form').addEventListener('submit', async function(e) {
         e.preventDefault();
-
-        // Validazione privacy
-        const privacyCheck = document.getElementById('main-privacy');
-        const privacyError = document.getElementById('main-privacy-error');
-        if (!privacyCheck.checked) {
-            privacyError.classList.add('privacy-error--visible');
-            privacyCheck.closest('.privacy-check').querySelector('.privacy-check__box').style.borderColor = '#c0392b';
-            privacyCheck.closest('.privacy-check').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
-        }
-        privacyError.classList.remove('privacy-error--visible');
-
         function val(id) { const el = document.getElementById(id); return el ? el.value : ''; }
 
         const btn = this.querySelector('.form-submit');
